@@ -1,0 +1,281 @@
+/* Add this CSS to your existing styles.css or in a <style> tag in the <head> section of your HTML */
+/* General Styles */
+
+
+
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px; /* Add margin on all sides of the webpage */
+  padding: 0%;
+  line-height: 1.5;
+  font-size: 130%;
+  
+  box-sizing: border-box; /* Add box-sizing property to include padding and border in the total width */
+}
+
+
+h1, h2, h3 {
+  color: #333;
+}
+
+header, nav, main, footer {
+  padding: 20px;
+}
+
+/* Header Styles */
+header {
+  background-color: #f2f2f2;
+  text-align: center;
+}
+
+/* logo freeze as banner */
+.logo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f2f2f2; /* Set the desired background color for the banner */
+  z-index: 100; /* Adjust the z-index to ensure the banner is displayed above other content */
+  padding: 8px; /* Add padding to the banner if needed */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for a 3D effect */
+}
+
+.logo img {
+  max-height: 80px; /* Set the maximum height for the logo to avoid taking too much space */
+  
+  
+}
+
+/* to change the mouse pointer to different look */
+.logo img,
+.logo h1 {
+  cursor:pointer;
+  position: relative;
+  left: 20px;
+}
+
+/* link in banner */
+.banner-link {
+  position: absolute;
+  top: 8px;
+  right: 40px; /* Adjust the value as needed to control the horizontal position */
+  line-height: 50px; /* Adjust the value to vertically center the link text within the banner */
+  color: #0a0a0a; /* Set the color for the link text */
+  text-decoration: none; /* Remove underline for the link text */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/*heading section*/
+.heading {
+    padding-top: 80px; /* Adjust the value as needed to create space for the fixed banner */
+  }
+
+
+/* Navigation Styles */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+}
+
+/* Main Content Styles */
+section {
+  margin-bottom: 30px;
+}
+
+/* Add a pop-up effect to the navigation buttons */
+nav a {
+  text-decoration: none;
+  color: #333;
+  transition: transform 0.3s ease; /* Add a transform transition with 0.3 seconds duration */
+  display: inline-block; /* Add this to the navigation links to prevent them from stretching */
+}
+
+/* Scale the buttons on hover to create the pop-up effect */
+nav a:hover {
+  transform: scale(1.1); /* Increase the scale by 10% when hovering */
+}
+
+
+
+
+/* product section */
+
+.product-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 20px;
+  
+}
+
+/* Display 4 products in a row on larger screens */
+.product {
+  flex: 0 0 calc(25% - 80px); /* Adjust width to fit 4 products in a row with spacing */
+  max-width: calc(25% - 80px); /* Add max-width to prevent products from wrapping on smaller screens */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 5px;
+  /* ... Your existing styles for .product ... */
+  display: flex; /* Add display:flex to make the container a flex container */
+  flex-direction: column; /* Set flex-direction to column to stack elements vertically */
+  align-items: center; /* Center the items horizontally within the container */
+  
+}
+
+/* Media queries for responsive product container */
+/* Three products per row on tablets (e.g., 1024x768) */
+@media (max-width: 1300px) and (min-width: 768px) {
+  .product {
+    flex: 0 0 calc(33.333% - 80px); /* Adjust width to fit 3 products in a row with spacing */
+    max-width: calc(33.333% - 80px); /* Add max-width for responsiveness */
+  }
+}
+
+/* Two products per row on smartphones (e.g., 767x or smaller) */
+@media (max-width: 767px) {
+  .product {
+    flex: 0 0 calc(50% - 80px); /* Adjust width to fit 2 products in a row with spacing */
+    max-width: calc(50% - 80px); /* Add max-width for responsiveness */
+  }
+}
+
+/* Adjust the product details content */
+.product-details {
+  flex: 1;
+  text-align: center;
+  font-size: 16px;
+  padding: 0px; /* Add padding to create spacing around the product details */
+  word-wrap:break-word; /* Allow long words to be broken and wrap to the next line */
+  max-width: 100%; /* Set a maximum width to prevent the description from overflowing */
+}
+
+/* Center-align the PDF icon image */
+.product img {
+  max-width: 60%;
+  height: auto;
+  display: block; /* Add display:block to remove any default margin and padding */
+  margin: 0 auto; /* Set margin to auto on left and right to center the image horizontally */
+}
+
+.product a img {
+  padding: 0;
+  margin: 0;
+}
+
+/* Add a transition effect for the PDF icon and the Buy Now link */
+.product img,
+.product a {
+  transition: transform 0.3s ease; /* Add a transform transition with 0.3 seconds duration */
+}
+
+/* Scale the elements on hover */
+.product img:hover,
+.product a:hover {
+  transform: scale(1.1); /* Increase the scale by 10% when hovering */
+}
+
+/* Styles for the popup container for qr */
+.popup-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+  z-index: 9999; /* Set a high z-index to ensure it's above other content */
+  justify-content: center;
+  align-items: center;
+}
+
+/* Show the popup container when the "show" class is applied */
+.popup-container.show {
+  display: flex;
+}
+
+.popup-container img {
+  max-width: 70%;
+  height: auto;
+}
+
+/* Styles for the close button */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+
+
+.product h3 {
+  margin-top: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+.product h4 {
+  margin-top: 2px;
+  font-size: 18px;
+}
+
+/* Center-align the "Buy Now" link inside the product container */
+.product a {
+  display: flex; /* Use flex display to center the content */
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
+  padding: 4px 10px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 3px;
+}
+
+
+
+
+
+/* Footer Styles */
+footer {
+  background-color: #f2f2f2;
+  text-align: center;
+}
+
+/* logo section */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 2px; /* Adjust the gap between the logo and company name */
+}
+
+.logo img {
+  height: 50px; /* Adjust the height of your logo */
+  /* You can also use max-height if you want to limit the logo size */
+}
+
+.logo h1 {
+  font-size: 30px; /* Adjust the font size of your company name */
+  margin: 5px; /* Remove default margins to prevent spacing issues */
+}
+

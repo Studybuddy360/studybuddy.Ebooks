@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="StudyBuddy.com - Find IGNOU notes, assignments, solved previous years' question papers, and other study material.">
+  <title>Buy IGUNO Notes/Assignments</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles_pop.css">
+  <script src="script_pop.js"></script>
+</head>
+<body> 
+   <!--header section-->
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="StudyBuddy" onclick="scrollToTop()">
+      <h1 onclick="scrollToTop()">StudyBuddy.com</h1>
+      <a href="https://telegram.me/study_budd" class="banner-link">@StudyBuddy.com Telegram</a>
+    </div>
+    <div class="heading">
+      <h1>IGNOU NOTES, ASSIGNMENTS, SOLVED PREVIOUS YEARS QUESTION PAPERS AND OTHER STUDY MATERIAL</h1>
+      <h2>Cheapest price, notes, assignments, solutions prepared by our team of Subject Teachers, Ex-Students, and Subject matter experts.</h2>
+    </div>
+  </header>
+ 
+  <!--Navigation buttons-->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#products">Sample Products</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!--Home section-->
+    <section id="home">
+      <h2>Get the most updated Notes</h2>
+      <p>You can easily find detailed, IGNOU notes, assignments, and other study materials for any subject, be it Humanities, Science, or Mathematics, starting at just Rs. 50 each. To get yours, <a href="#contact">Contact Us</a>.</p>
+    </section>
+
+    <!--Product section-->
+    <section id="products">
+      <h2>Sample Products</h2>
+
+        <div class="product-group">
+                    <div class="product"> <!--Individual products 1-->
+                        <a href="Sample assignment on mev.pdf" target="_blank"><img src="pdf_icon.png"  alt="Sample assignment on mev"></a>
+                            <div class="product-details">
+                              <h3 onclick="openPDF('Sample assignment on mev.pdf')">Solved Assignment on MEV-011</h3>
+                                <p>Sample Solved assignment on FUNDAMENTALS OF ENVIRONMENTAL
+                                    SCIENCE AND ECOLOGY paper for Masters of Science in Environmental Science</p>
+                                    <h4>Price: Rs. 50.00</h4>
+                            </div>
+                                <!-- Add an onclick event to the "Buy Now" link to toggle the popup -->
+                                <a href="#contact" onclick="scrollToContact()" target="_self">Buy Now</a>
+                     </div>
+                        
+    
+            <div class="product"> <!--Individual products 2-->
+                    <a href="ques paper MEV-011.pdf" target="_blank"><img src="pdf_icon.png" alt="ques paper MEV-011"></a>
+                <div class="product-details">
+                        <h3 onclick="openPDF('ques paper MEV-011.pdf')">Solved question paper MEV-011</h3>
+                        <p>Sample soloved Question paper on FUNDAMENTALS OF ENVIRONMENTAL
+                            SCIENCE AND ECOLOGY paper for Masters of Science in Environmental Science  </p>
+                            <h4>Price: Rs. 50.00</h4>
+                </div>
+                        <!-- Add an onclick event to the "Buy Now" link to toggle the popup -->
+                        <a href="#contact" onclick="scrollToContact()" target="_self">Buy Now</a>
+            </div>
+        
+    
+      
+            <div class="product"> <!--Individual products 3-->
+                 <a href="Assignment BACHELOR OF ARTS sociology.pdf" target="_blank"><img src="pdf_icon.png" alt="Assignment BACHELOR OF ARTS sociology"></a>
+                 <div class="product-details">
+                    <h3 onclick="openPDF('Assignment BACHELOR OF ARTS sociology.pdf')">Solved Assignment on Bachelor of Arts Sociology BSOC-101</h3>
+                    <p>Sample Assignment on INTRODUCTION TO SOCIOLOGY paper for Bachelor of Arts Sociology July 2022 to January 2023</p>
+                    <h4>Price: Rs. 50.00</h4>
+                 </div>
+                    <!-- Add an onclick event to the "Buy Now" link to toggle the popup -->
+                    <a href="#contact" onclick="scrollToContact()" target="_self">Buy Now</a>
+            </div>
+            
+     
+    
+            <div class="product"> <!--Individual products 4-->
+                 <a href="BCS-11 que solved.pdf" target="_blank"><img src="pdf_icon.png" alt="Solved Question Paper BCS-011"></a>
+                 <div class="product-details">
+                    <h3 onclick="openPDF('BCS-11 que solved.pdf')">Solved Question Paper BCS-011</h3>
+                    <p>Sample soloved Question paper on COMPUTER BASICS AND
+                      PC SOFTWARE paper for Bachelor of Computer Application (BCA)</p>
+                    <h4>Price: Rs. 50.00</h4>
+                </div>
+                        <!-- Add an onclick event to the "Buy Now" link to toggle the popup -->
+                        <a href="#contact" onclick="scrollToContact()" target="_self">Buy Now</a>
+
+
+            </div>
+            
+      </div>
+    </section>
+
+    <!--Contact section-->
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>To get the PDFs, send the following details to our Telegram: <a href="https://telegram.me/study_budd">StudyBuddy Telegram</a>:</p>
+      <ol>
+        <li>Choose what you want: assignments/notes or Solved Question Papers.</li>
+        <li>Mention assignment code/subject code or Question paper subject code with the year.</li>
+        <li>Send it to the Telegram <a href="https://telegram.me/study_budd">Link</a> or 
+          <a href="#" onclick="openQrPopup()">
+            <img src="qr.jpg" width="20px" height="20px" alt="Thumbnail Image">
+          </a>
+        </li>
+        <li>That's it! We will contact you shortly.</li>
+        
+      </ol>
+      Note: Notes will be prepared/compiled on order request at a maximum wait time of 2 hours Guaranteed .
+
+      <!-- Add a new popup container for the QR icon and QR_Full.jpg -->
+    <div class="qr-popup-container" id="qrPopupContainer">
+      <span class="close-btn" onclick="closeQrPopup()">&times;</span>
+      <img src="QR_Full.jpg" alt="QR Code Image">
+    </div>
+    
+    </section>
+  </main>
+
+  <!--Footer section-->
+  <footer>
+    <p>&copy; 2023 StudyBuddy. All rights reserved.</p>
+  </footer>
+</body>
+</html>
