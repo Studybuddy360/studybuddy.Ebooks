@@ -9,14 +9,21 @@ body {
   margin: 20px; /* Add margin on all sides of the webpage */
   padding: 0%;
   line-height: 1.5;
-  font-size: 130%;
-  
+  font-size: 1.4em; /* Use relative units for font size */
   box-sizing: border-box; /* Add box-sizing property to include padding and border in the total width */
 }
 
 
 h1, h2, h3 {
-  color: #333;
+  color: #333; 
+}
+
+h1 {
+  font-size: 1.5em;
+}
+
+h2 {
+  font-size: 1.2em;
 }
 
 header, nav, main, footer {
@@ -27,6 +34,8 @@ header, nav, main, footer {
 header {
   background-color: #f2f2f2;
   text-align: center;
+  padding: 20px;
+  position: relative;
 }
 
 /* logo freeze as banner */
@@ -37,14 +46,15 @@ header {
   width: 100%;
   background-color: #f2f2f2; /* Set the desired background color for the banner */
   z-index: 100; /* Adjust the z-index to ensure the banner is displayed above other content */
-  padding: 8px; /* Add padding to the banner if needed */
+  padding: 4px; /* Add padding to the banner if needed */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for a 3D effect */
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .logo img {
-  max-height: 80px; /* Set the maximum height for the logo to avoid taking too much space */
-  
-  
+  max-width: 80px; /* Set the maximum height for the logo to avoid taking too much space */ 
 }
 
 /* to change the mouse pointer to different look */
@@ -55,7 +65,7 @@ header {
   left: 20px;
 }
 
-/* link in banner */
+/* Positioning for the banner link */
 .banner-link {
   position: absolute;
   top: 8px;
@@ -66,9 +76,35 @@ header {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* logo section */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 2px; /* Adjust the gap between the logo and company name */
+}
+
+.logo img {
+  height: 1.6em; /* Adjust the height of your logo */
+  /* You can also use max-height if you want to limit the logo size */
+}
+
+.logo h1 {
+  font-size: 1.2em; /* Adjust the font size of your company name */
+  margin: 5px; /* Remove default margins to prevent spacing issues */
+}
+
+
+/* Banner link hide on screens smaller than 767px */
+@media (max-width: 767px) {
+  .banner-link {
+    display: none;
+  }
+}
+
+
 /*heading section*/
 .heading {
-    padding-top: 80px; /* Adjust the value as needed to create space for the fixed banner */
+    padding-top: 56px; /* Adjust the value as needed to create space for the fixed banner */
   }
 
 
@@ -114,47 +150,39 @@ nav a:hover {
 /* product section */
 
 .product-group {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 5%;
-  margin-left: 5%;
-  margin-right: 5%;
-  margin-bottom: 20px;
-  
+  display: grid; /* Use CSS Grid to create the dynamic grid */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust the minmax value as needed for the column width */
+  grid-gap: 20px; /* Adjust the gap between grid items */
+  justify-content: center; /* Center the grid items horizontally */ 
 }
 
 /* Display 4 products in a row on larger screens */
 .product {
-  flex: 0 0 calc(25% - 80px); /* Adjust width to fit 4 products in a row with spacing */
-  max-width: calc(25% - 80px); /* Add max-width to prevent products from wrapping on smaller screens */
   border: 1px solid #ccc;
   border-radius: 10px;
   box-sizing: border-box;
   padding: 5px;
-  /* ... Your existing styles for .product ... */
-  display: flex; /* Add display:flex to make the container a flex container */
-  flex-direction: column; /* Set flex-direction to column to stack elements vertically */
-  align-items: center; /* Center the items horizontally within the container */
-  
+  text-align: center; /* Center the product details text */
+  display: flex; /* Use flexbox to stack the elements vertically */
+  flex-direction: column; /* Stack elements vertically */
+  justify-content: space-between; /* Distribute elements to take all available space */
 }
 
 /* Media queries for responsive product container */
 /* Three products per row on tablets (e.g., 1024x768) */
 @media (max-width: 1300px) and (min-width: 768px) {
-  .product {
-    flex: 0 0 calc(33.333% - 80px); /* Adjust width to fit 3 products in a row with spacing */
-    max-width: calc(33.333% - 80px); /* Add max-width for responsiveness */
+  .product-group {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust the minmax value for tablets */
   }
 }
 
 /* Two products per row on smartphones (e.g., 767x or smaller) */
 @media (max-width: 767px) {
-  .product {
-    flex: 0 0 calc(50% - 80px); /* Adjust width to fit 2 products in a row with spacing */
-    max-width: calc(50% - 80px); /* Add max-width for responsiveness */
+  .product-group {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust the minmax value for smartphones */
   }
 }
+
 
 /* Adjust the product details content */
 .product-details {
@@ -168,7 +196,7 @@ nav a:hover {
 
 /* Center-align the PDF icon image */
 .product img {
-  max-width: 60%;
+  max-width: 46%;
   height: auto;
   display: block; /* Add display:block to remove any default margin and padding */
   margin: 0 auto; /* Set margin to auto on left and right to center the image horizontally */
@@ -226,8 +254,6 @@ nav a:hover {
 }
 
 
-
-
 .product h3 {
   margin-top: 10px;
   font-size: 20px;
@@ -246,14 +272,30 @@ nav a:hover {
   justify-content: center; /* Center the content horizontally */
   align-items: center; /* Center the content vertically */
   padding: 4px 10px;
+  background-color: #413e3e;
+  color: #f0eeee;
+  text-decoration:wavy;
+  border-radius: 4px;
+}
+
+/* Styles for the "Buy Now" link container */
+.buy-now-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px; /* Adjust the padding values as needed */
+}
+
+/* Styles for the "Buy Now" link */
+.buy-now-link {
+  display: block; /* Make the link a block-level element to occupy the container's width */
+  padding: 4px 10px; /* Adjust the padding values as needed */
   background-color: #333;
   color: #fff;
   text-decoration: none;
   border-radius: 3px;
+  margin-top: auto; /* Push the link to the bottom of the container */
 }
-
-
-
 
 
 /* Footer Styles */
@@ -262,20 +304,5 @@ footer {
   text-align: center;
 }
 
-/* logo section */
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 2px; /* Adjust the gap between the logo and company name */
-}
 
-.logo img {
-  height: 50px; /* Adjust the height of your logo */
-  /* You can also use max-height if you want to limit the logo size */
-}
-
-.logo h1 {
-  font-size: 30px; /* Adjust the font size of your company name */
-  margin: 5px; /* Remove default margins to prevent spacing issues */
-}
 
