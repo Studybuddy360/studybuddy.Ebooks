@@ -9,8 +9,8 @@ function scrollToTop() {
 document.addEventListener('DOMContentLoaded', function() {
   const navLinks = document.querySelectorAll('nav a');
  
-  const bannerHeight = document.querySelector('.heading').offsetHeight; // Get the height of the fixed banner
-  const offset = 260; // Adjust this value to set the space between the heading and the bottom of the banner
+  const bannerHeight = document.querySelector('.logo').offsetHeight; // Get the height of the fixed banner
+  const offset = 0; // Adjust this value to set the space between the heading and the bottom of the banner
 
   for (const link of navLinks) {
     link.addEventListener('click', function(event) {
@@ -49,6 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var popupContainer = document.getElementById("popupContainer");
     popupContainer.classList.remove("show");
   
+
     // Remove blur effect from the background
     document.body.classList.remove("blur-background");
   }
